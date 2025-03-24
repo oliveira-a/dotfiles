@@ -1,26 +1,36 @@
-syntax enable
-
 set encoding=utf-8
 set background=dark
 set clipboard=
 set mouse=a
+set laststatus=2
+set statusline+=%F
+set cc=72 tw=72
+
+" Indentation
+" default
+set expandtab ts=4 sw=4 softtabstop=4
 
 set noswapfile
 
 set nowrap
-
-set softtabstop=-1
 set cindent
-set tw=60
 set nojoinspaces
-set sw=4 ts=4
-set expandtab
 
 set hlsearch
 set incsearch
 set smartcase ignorecase
+set autoread
 
 nnoremap <Leader>l :nohlsearch<CR>
 
-set laststatus=2
-set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+nnoremap <leader>f :find *
+nnoremap <leader>F :find <C-R>=expand('%:p:h').'/**/*'<CR>
+
+nnoremap <leader>s :sfind *
+nnoremap <leader>S :sfind <C-R>=expand('%:p:h').'/**/*'<CR>
+
+call plug#begin()
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
+call plug#end()
+
+syntax off
