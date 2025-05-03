@@ -2,9 +2,6 @@ set encoding=utf-8
 set background=dark
 set clipboard=
 set mouse=a
-set laststatus=2
-set statusline+=%F
-set cc=72 tw=72
 
 " Indentation
 " default
@@ -31,6 +28,13 @@ nnoremap <leader>S :sfind <C-R>=expand('%:p:h').'/**/*'<CR>
 
 call plug#begin()
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
+
+autocmd InsertEnter,InsertLeave * set cul!
 
 syntax off
