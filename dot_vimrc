@@ -41,6 +41,7 @@ autocmd FileType javascript,typescript,typescriptreact setlocal tabstop=2 shiftw
 " Use Prettier for formatting
 autocmd FileType javascript,typescript,typescriptreact setlocal formatprg=prettier\ --stdin-filepath\ %\ --parser\ babel-ts
 
-" Need to set this up for OSX, see https://stackoverflow.com/questions/69145357/vim-almost-hangs-with-100-line-typescript-file
+" Need to set this up for OSX, see 
+" https://stackoverflow.com/questions/69145357/vim-almost-hangs-with-100-line-typescript-file
 set regexpengine=0
 filetype plugin indent on
